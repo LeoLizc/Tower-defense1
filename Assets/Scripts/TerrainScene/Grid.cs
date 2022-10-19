@@ -83,6 +83,14 @@ public class Grid : ScriptableObject
         }
     }
 
+    public void setFreeCell(int x, int y)
+    {
+        if (x >= 0 && x < width && y >= 0 && y < height)
+        {
+            gridArray[x, y].SetWalkable(true);
+        }
+    }
+
     public bool isWalkable(int x, int y)
     {
         return gridArray[x, y].isWalkable;

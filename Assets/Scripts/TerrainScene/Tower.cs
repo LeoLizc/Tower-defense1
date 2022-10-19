@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     Rigidbody2D rb;
+    public event Action<Tower> OnDeathEvent;
+    public int x { get; private set; }
+    public int y { get; private set; }
 
     [Header("Detection")]
     
@@ -42,6 +46,12 @@ public class Tower : MonoBehaviour
         InvokeRepeating("lookForEnemy", 0, (float)1 / searchPerSecond);
     }
 
+    public void locate(int _x, int _y)
+    {
+        x = _x;
+        y = _y;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Hit");
@@ -63,6 +73,7 @@ public class Tower : MonoBehaviour
         hp -= damage;
         if (hp < 0)
         {
+            OnDeathEvent.Invoke(this);
             Destroy(this.gameObject);
         }
     }

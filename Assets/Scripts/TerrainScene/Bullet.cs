@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         damage = _damage;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (target == null)
         {
@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
         }
 
         Vector2 direction = target.transform.position - transform.position;
-        transform.Translate(direction.normalized * velocity * Time.deltaTime, Space.World);
+        transform.Translate(direction.normalized * velocity * Time.fixedDeltaTime, Space.World);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

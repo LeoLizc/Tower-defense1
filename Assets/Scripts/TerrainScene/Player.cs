@@ -33,6 +33,18 @@ public class Player : MonoBehaviour
     {
         detector.OnEnemyDetected += onTowerDetected;
         detector.OnEnemyExit += onTowerExit;
+        GetComponent<PlayerHealth>().OnDeathEvent += OnPlayerDeath;
+    }
+
+    private void OnPlayerDeath(GameObject obj)
+    {
+        if(path != null)
+        {
+            if (!changedCells)
+                path[waypointIndex].SetWalkable(true);
+            else
+                path[waypointIndex - 1].SetWalkable(true);
+        }
     }
 
     private void onTowerExit()

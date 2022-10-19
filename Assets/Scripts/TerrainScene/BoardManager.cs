@@ -35,7 +35,10 @@ public class BoardManager : MonoBehaviour
 
     public void createTower(int x, int y)
     {
-        towers.Add(Instantiate(TowerPrefab, new Vector2(x, y), Quaternion.identity, transform));
+        Tower tower = Instantiate(TowerPrefab, new Vector2(x, y), Quaternion.identity, transform);
+        tower.locate(x, y);
+        tower.OnDeathEvent += OnTowerDead;
+        towers.Add(tower);
         grid.setBusyCell(x, y);
     }
 
@@ -72,5 +75,10 @@ public class BoardManager : MonoBehaviour
         units.Remove(g.GetComponent<Player>());
         if(units.Count<=0)
         GameManager.Instance.UpdateGameState(GameManager.GameStateEnum.end);
+    }
+
+    public void OnTowerDead(Tower tower)
+    {
+        grid.setFreeCell(tower.x, tower.y);
     }
 }
