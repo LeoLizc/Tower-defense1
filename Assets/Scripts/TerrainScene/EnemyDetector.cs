@@ -11,6 +11,7 @@ public class EnemyDetector : MonoBehaviour
     public LayerMask enemyLayer;
     public GameObject target { get; private set; }
     public bool isEnemyDetected { get { return target != null; } }
+    private bool _isEnemyDetected = false;
 
     private void Start()
     {
@@ -25,13 +26,19 @@ public class EnemyDetector : MonoBehaviour
             if (!isEnemyDetected)
             {
                 target = collider.gameObject;
-                OnEnemyDetected.Invoke(collider);
             }
         }
         else
         {
             target = null;
-            OnEnemyExit.Invoke();
+        }
+        if(isEnemyDetected != _isEnemyDetected)
+        {
+            if (isEnemyDetected)
+                OnEnemyDetected?.Invoke(collider);
+            else
+                OnEnemyExit?.Invoke();
+            _isEnemyDetected = isEnemyDetected;
         }
     }
 

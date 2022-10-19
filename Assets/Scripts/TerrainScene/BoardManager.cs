@@ -35,6 +35,8 @@ public class BoardManager : MonoBehaviour
 
     public void createTower(int x, int y)
     {
+        if (!grid.isWalkable(x, y))
+            return;
         Tower tower = Instantiate(TowerPrefab, new Vector2(x, y), Quaternion.identity, transform);
         tower.locate(x, y);
         tower.OnDeathEvent += OnTowerDead;
@@ -50,24 +52,29 @@ public class BoardManager : MonoBehaviour
 
         //Instantiate(PowerSourcePrefab, new Vector2(5, 19), Quaternion.identity);
         Instantiate(PowerSourcePrefab, new Vector2(5, 19), Quaternion.identity, transform);
-        createTower(8, 8);
-
         PathManager.Instance.powerUnitLocation = new Vector2Int(5, 19);
+        
+        // CREATING TOWERS
+        for(int i=0; i<5; i++)
+        {
+            createTower(Random.Range(0, 11), Random.Range(15, 20));
+        }
 
-        /*Instantiate(PlayerPrefab, new Vector2(8, 2), Quaternion.identity, transform);
-        Instantiate(PlayerPrefab, new Vector2(8, 0), Quaternion.identity, transform);*/
-        createUnit(5,0);
-        createUnit(6,0);
+        // CREATING UNITS
+        for (int i = 0; i < 5; i++)
+        {
+            createUnit(Random.Range(0, 11), Random.Range(0, 5));
+        }
 
-        //transform.position = new Vector3(3, 3, transform.position.z);
+        startGame();
+    }
 
+    public void startGame()
+    {
         foreach (Player unit in units)
         {
             unit.starMoving(grid, 3);
         }
-        //player.starMoving(grid, 3);
-        //player.starMoving(grid, 2);
-
     }
 
     public void checkPlayers(GameObject g)

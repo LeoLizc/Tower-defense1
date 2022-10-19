@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public event Action<GameObject> OnDeathEvent;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit");
+        /*Debug.Log("Hit");
         if (collision.gameObject.tag == "Bullet")
         {
             HP -= 20;
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
                 OnDeathEvent?.Invoke(gameObject);
                 Destroy(this.gameObject);
             }
-        }
+        }*/
     }
 
     public void makeDamage(int damage)

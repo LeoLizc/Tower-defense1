@@ -54,7 +54,7 @@ public class Tower : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit");
+        /*Debug.Log("Hit");
         if (collision.gameObject.tag == "Bullet")
         {
             hp -= 20;
@@ -65,7 +65,7 @@ public class Tower : MonoBehaviour
                 Destroy(this.gameObject);
             }
             //Destroy(collision.gameObject);
-        }
+        }*/
     }
 
     public void makeDamage(int damage)
