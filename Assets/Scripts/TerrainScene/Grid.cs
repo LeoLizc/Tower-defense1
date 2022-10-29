@@ -75,11 +75,28 @@ public class Grid : ScriptableObject
         gridArray[newX, newY].SetWalkable(false);
     }
 
+    public void setBusyCell(int initialX, int initialY, int newX, int newY, Unit unit)
+    {
+        gridArray[initialX, initialY].SetWalkable(true);
+        gridArray[initialX, initialY].setUnit(null);
+        gridArray[newX, newY].SetWalkable(false);
+        gridArray[newX, newY].setUnit(unit);
+    }
+
     public void setBusyCell(int x, int y)
     {
         if(x >= 0 && x < width && y >= 0 && y < height)
         {
             gridArray[x, y].SetWalkable(false);
+        }
+    }
+
+    public void setBusyCell(int x, int y, Unit unit)
+    {
+        if (x >= 0 && x < width && y >= 0 && y < height)
+        {
+            gridArray[x, y].SetWalkable(false);
+            gridArray[x, y].setUnit(unit);
         }
     }
 
@@ -98,7 +115,13 @@ public class Grid : ScriptableObject
 
     public Cell GetGridObject(int x, int y)
     {
-        return gridArray[x, y];
+        if (x >= 0 && x < width && y >= 0 && y < height)
+            return gridArray[x, y];
+        else
+        {
+            Debug.LogError("Index out of bounds grid");
+            return null;
+        }
     }
 
     internal float GetCellSize()

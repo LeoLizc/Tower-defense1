@@ -16,6 +16,7 @@ public class Cell : MonoBehaviour
     [Header("Action filter/colors")]
     public SpriteRenderer filter;
     public Color selectedColor, disabledColor;
+    private Unit unit;
 
     public void Init(Grid grid, int x, int y, bool isWalkable)
     {
@@ -52,5 +53,39 @@ public class Cell : MonoBehaviour
     public override string ToString()
     {
         return "Cell "+x + "," + y;
+    }
+
+    public void setUnit(Unit _unit)
+    {
+        if (unit != null)
+        {
+            unit.healthSystem.OnDeathEvent -= OnUnitDeath;
+        }
+        unit = _unit;
+        if (unit != null)
+        {
+            unit.healthSystem.OnDeathEvent += OnUnitDeath;
+            SetWalkable(false);
+        }
+        else
+        {
+            this.SetWalkable(true);
+        }
+    }
+
+    private void OnUnitDeath(GameObject obj)
+    {
+        SetWalkable(true);
+        setUnit(null);
+    }
+
+    private void Update()
+    {
+        GetComponent<SpriteRenderer>().color = isWalkable? Color.blue: Color.red;
+    }
+
+    public Unit getUnit()
+    {
+        return unit;
     }
 }

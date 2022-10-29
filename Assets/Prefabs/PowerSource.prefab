@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3550549395752754143}
   - component: {fileID: 3550549395752754128}
   - component: {fileID: 2219081163613578378}
+  - component: {fileID: -7054390478500131881}
   m_Layer: 7
   m_Name: PowerSource
   m_TagString: PowerSource
@@ -135,4 +136,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c170c75925b8f48d2b877941cc03bbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 1000
+  healthSystem: {fileID: 0}
+  HP: 300
+--- !u!114 &-7054390478500131881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550549395752754138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3df5fa629ad6464a848f9051b44042c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 50

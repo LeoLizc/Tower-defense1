@@ -69,7 +69,7 @@ public class PathManager : MonoBehaviour
             foreach (Cell neighbourNode in GetNeighbourList(currentNode))
             {
                 if (closedList.Contains(neighbourNode)) continue;
-                if (!neighbourNode.isWalkable)
+                if (!neighbourNode.isWalkable && neighbourNode != endCell)
                 {
                     closedList.Add(neighbourNode);
                     continue;
@@ -98,7 +98,7 @@ public class PathManager : MonoBehaviour
     private List<Cell> CalculatePath(Cell endCell)
     {
         List<Cell> path = new List<Cell>();
-        path.Add(endCell);
+        //path.Add(endCell);
         Cell currentNode = endCell;
         while (currentNode.pastCell != null)
         {

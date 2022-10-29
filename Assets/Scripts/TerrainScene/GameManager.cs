@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         switch (gameState)
         {
             case GameStateEnum.start:
-                BoardManager.Instance.SetupBoard();
+                //BoardManager.Instance.SetupBoard();
                 UpdateGameState(GameStateEnum.progress);
                 break;
             case GameStateEnum.progress:

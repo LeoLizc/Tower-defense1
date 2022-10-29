@@ -42,13 +42,9 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth health))
+        if(collision.gameObject.TryGetComponent<HealthSystem>(out HealthSystem health))
         {
             health.makeDamage(damage);
-            Destroy(gameObject);
-        }else if (collision.gameObject.TryGetComponent<Tower>(out Tower tower))
-        {
-            tower.makeDamage(damage);
             Destroy(gameObject);
         }
     }

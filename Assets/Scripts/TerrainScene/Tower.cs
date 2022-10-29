@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class Tower : MonoBehaviour
+public class Tower : Unit
 {
     Rigidbody2D rb;
-    public event Action<Tower> OnDeathEvent;
     public int x { get; private set; }
     public int y { get; private set; }
 
@@ -35,8 +33,9 @@ public class Tower : MonoBehaviour
     [SerializeField] private int hp;
     [SerializeField] private int cost;
 
-    private void Awake()
+    new private void Awake()
     {
+        base.Awake();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -44,6 +43,7 @@ public class Tower : MonoBehaviour
     {
         time = attackInterval;
         InvokeRepeating("lookForEnemy", 0, (float)1 / searchPerSecond);
+        healthSystem.HP = hp;
     }
 
     public void locate(int _x, int _y)
@@ -67,17 +67,6 @@ public class Tower : MonoBehaviour
             //Destroy(collision.gameObject);
         }*/
     }
-
-    public void makeDamage(int damage)
-    {
-        hp -= damage;
-        if (hp < 0)
-        {
-            OnDeathEvent.Invoke(this);
-            Destroy(this.gameObject);
-        }
-    }
-
     private void lookForEnemy()
     {
         Collider2D collider = Physics2D.OverlapCircle((Vector2)transform.position, range, playerLayer);

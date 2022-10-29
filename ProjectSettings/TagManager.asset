@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PowerSource
   - Bullet
+  - Unit1
+  - Tower1
+  - Tower2
   layers:
   - Default
   - TransparentFX

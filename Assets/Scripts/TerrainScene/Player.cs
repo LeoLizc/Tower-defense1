@@ -5,8 +5,7 @@ using UnityEngine;
 
 // ref: https://drive.google.com/file/d/1WiF2LwM-6WvEnas9vw32YrYPly9K0Qrv/view
 
-[RequireComponent(typeof(EnemyDetector))]
-public class Player : MonoBehaviour
+public class Player : Unit
 {
     List<Cell> path;
     [SerializeField]
@@ -24,8 +23,9 @@ public class Player : MonoBehaviour
     // Need to create an enemy detector
     private EnemyDetector detector;
 
-    private void Awake()
+    new private void Awake()
     {
+        base.Awake();
         detector = GetComponent<EnemyDetector>();
     }
 
@@ -33,17 +33,18 @@ public class Player : MonoBehaviour
     {
         detector.OnEnemyDetected += onTowerDetected;
         detector.OnEnemyExit += onTowerExit;
-        GetComponent<PlayerHealth>().OnDeathEvent += OnPlayerDeath;
+        healthSystem.OnDeathEvent += OnPlayerDeath;
+
     }
 
     private void OnPlayerDeath(GameObject obj)
     {
         if(path != null)
         {
-            if (!changedCells)
-                path[waypointIndex].SetWalkable(true);
-            else
-                path[waypointIndex - 1].SetWalkable(true);
+            //if (!changedCells)
+            //    path[waypointIndex].SetWalkable(true);
+            //else
+            //    path[waypointIndex - 1].SetWalkable(true);
         }
     }
 
@@ -134,7 +135,8 @@ public class Player : MonoBehaviour
                     grid.setBusyCell((int)path[waypointIndex - 1].Position.x,
                         (int)path[waypointIndex - 1].Position.y,
                         (int)path[waypointIndex].Position.x,
-                        (int)path[waypointIndex].Position.y);
+                        (int)path[waypointIndex].Position.y,
+                        this);
                 }
                 
             }

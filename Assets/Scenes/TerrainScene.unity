@@ -167,6 +167,171 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUnitLocation: {x: 0, y: 0}
+--- !u!1 &200348265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200348267}
+  - component: {fileID: 200348266}
+  m_Layer: 0
+  m_Name: BoardManager (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &200348266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200348265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9500915d78c3d4f4a96639bbb5b0fa01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CellPrefab: {fileID: -5152743832843653546, guid: dec724f01987447449af4c24ce757670, type: 3}
+  PlayerPrefabs:
+  - {fileID: 4587635388746303466, guid: e8d4002ea143343439f26e985cee9581, type: 3}
+  PowerSourcePrefab: {fileID: 2219081163613578378, guid: 152930bb97dca45e9be6ef08cdaea323, type: 3}
+  TowerPrefabs:
+  - {fileID: 7462051843708910610, guid: b62a6506facbfef4087a19fbd538087a, type: 3}
+  - {fileID: 6919205461779498088, guid: d5bc18e35c6d33842b0119e0e2873f90, type: 3}
+  UnitCount: 5
+  TowerCount: 5
+  towers: []
+  state: 0
+  manager: {fileID: 11400000, guid: 25d9d7ec358428844b3dd02ccff78404, type: 2}
+--- !u!4 &200348267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200348265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.33, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &268928409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 268928411}
+  - component: {fileID: 268928410}
+  m_Layer: 0
+  m_Name: BoardManager (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &268928410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268928409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9500915d78c3d4f4a96639bbb5b0fa01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CellPrefab: {fileID: -5152743832843653546, guid: dec724f01987447449af4c24ce757670, type: 3}
+  PlayerPrefabs:
+  - {fileID: 4587635388746303466, guid: e8d4002ea143343439f26e985cee9581, type: 3}
+  PowerSourcePrefab: {fileID: 2219081163613578378, guid: 152930bb97dca45e9be6ef08cdaea323, type: 3}
+  TowerPrefabs:
+  - {fileID: 7462051843708910610, guid: b62a6506facbfef4087a19fbd538087a, type: 3}
+  - {fileID: 6919205461779498088, guid: d5bc18e35c6d33842b0119e0e2873f90, type: 3}
+  UnitCount: 5
+  TowerCount: 5
+  towers: []
+  state: 0
+  manager: {fileID: 11400000, guid: 25d9d7ec358428844b3dd02ccff78404, type: 2}
+--- !u!4 &268928411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268928409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.96, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &343622452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343622454}
+  - component: {fileID: 343622453}
+  m_Layer: 0
+  m_Name: BoardManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &343622453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343622452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9500915d78c3d4f4a96639bbb5b0fa01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CellPrefab: {fileID: -5152743832843653546, guid: dec724f01987447449af4c24ce757670, type: 3}
+  PlayerPrefabs:
+  - {fileID: 4587635388746303466, guid: e8d4002ea143343439f26e985cee9581, type: 3}
+  PowerSourcePrefab: {fileID: 2219081163613578378, guid: 152930bb97dca45e9be6ef08cdaea323, type: 3}
+  TowerPrefabs:
+  - {fileID: 7462051843708910610, guid: b62a6506facbfef4087a19fbd538087a, type: 3}
+  - {fileID: 6919205461779498088, guid: d5bc18e35c6d33842b0119e0e2873f90, type: 3}
+  UnitCount: 5
+  TowerCount: 5
+  towers: []
+  state: 0
+  manager: {fileID: 11400000, guid: 25d9d7ec358428844b3dd02ccff78404, type: 2}
+--- !u!4 &343622454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343622452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -25.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508404469
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +428,7 @@ GameObject:
   m_Layer: 0
   m_Name: BoardManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -280,9 +445,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: -5152743832843653546, guid: dec724f01987447449af4c24ce757670, type: 3}
-  PlayerPrefab: {fileID: 4587635388746303466, guid: e8d4002ea143343439f26e985cee9581, type: 3}
+  PlayerPrefabs:
+  - {fileID: 4587635388746303466, guid: e8d4002ea143343439f26e985cee9581, type: 3}
   PowerSourcePrefab: {fileID: 2219081163613578378, guid: 152930bb97dca45e9be6ef08cdaea323, type: 3}
-  TowerPrefab: {fileID: 7462051843708910610, guid: b62a6506facbfef4087a19fbd538087a, type: 3}
+  TowerPrefabs:
+  - {fileID: 7462051843708910610, guid: b62a6506facbfef4087a19fbd538087a, type: 3}
+  - {fileID: 6919205461779498088, guid: d5bc18e35c6d33842b0119e0e2873f90, type: 3}
+  UnitCount: 5
+  TowerCount: 5
+  towers: []
+  state: 0
+  manager: {fileID: 11400000, guid: 25d9d7ec358428844b3dd02ccff78404, type: 2}
 --- !u!4 &681147168
 Transform:
   m_ObjectHideFlags: 0
